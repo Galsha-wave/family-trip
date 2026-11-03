@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="style.css">
 <style>
-.hero.s1{background:linear-gradient(135deg,#123d30 0%,#1f6f54 45%,#3d7ea6 100%);min-height:auto}
-#s1Map{height:min(62vh,520px);min-height:340px;width:100%;z-index:1}
+.hero.trip{background:linear-gradient(135deg,#123d30 0%,#1f6f54 45%,#3d7ea6 100%);min-height:auto}
+#tripMap{height:min(62vh,520px);min-height:340px;width:100%;z-index:1}
 td.pos{color:#1f7a4d;font-weight:700}
 </style>
 </head>
@@ -22,18 +22,18 @@ td.pos{color:#1f7a4d;font-weight:700}
   <defs>
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Zm0 0v14m6-12v14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18.5v-11ZM4 10h16M8 3v4m8-4v4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
-    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3M4 7.5v10A2.5 2.5 0 0 0 6.5 20H20V8H6.5A2.5 2.5 0 0 1 4 7.5ZM16 14h2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 7.5A 2.5 2.5 0 0 1 6.5 5h11A 2.5 2.5 0 0 1 20 7.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A 2.5 2.5 0 0 1 4 18.5v-11ZM4 10h16M8 3v4m8-4v4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A 2.5 2.5 0 0 1 6.5 5H18v3M4 7.5v10A 2.5 2.5 0 0 0 6.5 20H20V8H6.5A 2.5 2.5 0 0 1 4 7.5ZM16 14h2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="18.5" cy="12" r="1.7" fill="currentColor"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
-    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3.5m0 0L8 7.5m4-4 4 4M5 12v6.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2M7 14h10v6H7v-6Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A 8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3.5m0 0L8 7.5m4-4 4 4M5 12v6.5A 1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A 1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A 1.5 1.5 0 0 1 19 17h-2M7 14h10v6H7v-6Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 1 1 13 0c0 5.4-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></symbol>
     <symbol id="i-nav" viewBox="0 0 24 24"><path d="M20.5 3.5 3.5 10.8l6.6 2.5 2.6 6.7 7.8-16.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5v-15ZM5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A 1.5 1.5 0 0 1 6.5 3H19v15H6.5A 1.5 1.5 0 0 0 5 19.5v-15ZM5 19.5A 1.5 1.5 0 0 0 6.5 21H19v-3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/></symbol>
     <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
@@ -42,7 +42,7 @@ td.pos{color:#1f7a4d;font-weight:700}
   <div class="topbar-in wrap">
     <a class="brand" href="#top" aria-label="לראש הדף"><span class="brand-mark" aria-hidden="true">🏔️</span><span class="brand-t">טיול משפחתי <span class="ltr">2027</span></span></a>
     <nav class="topnav" id="topnav" aria-label="ניווט ראשי">
-      <a href="#summary">סיכום</a><a href="#maps">מפה</a><a href="#flights">טיסות</a><a href="#lodging">לינה</a><a href="#itinerary">מסלול</a><a href="#budget">תקציב</a><a href="#compare">A2 מול S1</a><a href="#logistics">לוגיסטיקה</a><a href="#risks">סיכונים</a>
+      <a href="#summary">סיכום</a><a href="#maps">מפה</a><a href="#flights">טיסות</a><a href="#lodging">לינה</a><a href="#itinerary">מסלול</a><a href="#budget">תקציב</a><a href="#logistics">לוגיסטיקה</a><a href="#risks">סיכונים</a>
     </nav>
     <div class="top-actions no-print">
       <button type="button" class="icon-btn" id="themeBtn" aria-label="מצב כהה" aria-pressed="false"><svg class="ic sun"><use href="#i-sun"/></svg><svg class="ic moon"><use href="#i-moon"/></svg></button>
@@ -50,12 +50,12 @@ td.pos{color:#1f7a4d;font-weight:700}
   </div>
 </header>
 
-<section class="hero s1" id="top">
+<section class="hero trip" id="top">
   <div class="wrap hero-in">
-    <p class="eyebrow">תוכנית טיול משפחתי · <span class="ltr">18–27.8.2027</span> · 9 לילות · חלופה ל-A2</p>
-    <h1>Liptov · High Tatras<span class="h1-sub">מסלול S1 · סלובקיה דרך קרקוב (KRK)</span></h1>
+    <p class="eyebrow">תוכנית טיול משפחתי · <span class="ltr">18–27.8.2027</span> · 9 לילות</p>
+    <h1>Liptov · High Tatras<span class="h1-sub">סלובקיה דרך קרקוב (KRK)</span></h1>
     <p class="lead">① <b>Hotel Bešeňová (TMR)</b>, חצי פנסיון, עם פארק מים + Tatralandia + Chopok כלולים · 3–4 לילות<br>② <b>Lomnica Garden</b>, Tatranská Lomnica · 4–5 לילות<br>לילות ליד שדה KRK לפי שעות הטיסה. יום הנהיגה הארוך: 2:42.</p>
-    <div class="status glass" role="note"><strong>סטטוס:</strong> חלופה בלבד. <b>לא הוזמן כלום ולא נוצר קשר עם אף ספק.</b> מחירי הטיסות חיים ל-2027 (3.11.2026). מחירי הלינה והאטרקציות הם של 2026 או הערכות.</div>
+    <div class="status glass" role="note"><strong>סטטוס:</strong> בשלב תכנון. <b>לא הוזמן כלום ולא נוצר קשר עם אף ספק.</b> מחירי הטיסות חיים ל-2027 (3.11.2026). מחירי הלינה והאטרקציות הם של 2026 או הערכות.</div>
     <ul class="facts">
       <li><span>משפחה</span>2 מבוגרים, בן 6, בת 3, תינוק</li>
       <li><span>נהיגה</span>~750 ק"מ סה"כ · עד 2:42 ביום</li>
@@ -69,19 +69,18 @@ td.pos{color:#1f7a4d;font-weight:700}
   <span><span class="badge v">מאומת</span> מקור רשמי (לרוב מחיר 2026)</span><span><span class="badge e">הערכה</span> חישוב או הנחה</span><span><span class="badge c">לבדוק</span> לא ודאי / סותר</span></div>
 
 <section id="summary">
-  <h2>S1 בקצרה</h2>
+  <h2>בקצרה</h2>
   <div class="kpis">
     <div class="kpi"><span class="num"><span class="ltr">~25,600 ₪</span></span><span class="lbl">El Al (בסיס) · עם רזרבה 27,165 <span class="badge e">הערכה</span></span></div>
     <div class="kpi"><span class="num"><span class="ltr">~23,200 ₪</span></span><span class="lbl">Austrian, הכי זול · עם רזרבה 24,780 <span class="badge e">הערכה</span></span></div>
     <div class="kpi"><span class="num"><span class="ltr">~26,900 ₪</span></span><span class="lbl">Wizz כולל מזוודות · עם רזרבה 28,512 <span class="badge e">הערכה</span></span></div>
-    <div class="kpi"><span class="num"><span class="ltr">~29,460 ₪</span></span><span class="lbl">A2 לשם השוואה (Lufthansa 7,310) <span class="badge e">הערכה</span></span></div>
   </div>
-  <p class="note">כל הסכומים בשער €1 = 4.0 ₪. ה"בסיס" מחושב באותה שיטה כמו A2, כלומר בלי רזרבה, בלי ביטוח נסיעות ובלי כיסוי מלא לרכב.</p>
+  <p class="note">כל הסכומים בשער €1 = 4.0 ₪. ה"בסיס" לא כולל רזרבה, ביטוח נסיעות וכיסוי מלא לרכב.</p>
 </section>
 
 <section id="maps">
   <h2>מפת המסלול</h2>
-  <div class="map-box"><div id="s1Map" role="region" aria-label="מפת מסלול S1"></div></div>
+  <div class="map-box"><div id="tripMap" role="region" aria-label="מפת המסלול"></div></div>
   <p class="note small">הקווים הם מסלולי OSRM: KRK → Orava → Bešeňová (179 ק"מ) · Bešeňová → Štrbské → Lomnica (83 ק"מ) · Lomnica → KRK (145 ק"מ). זמני הנסיעה בלי פקקים. באוגוסט מוסיפים 30–40% <span class="badge e">הערכה</span>.</p>
 </section>
 
@@ -165,11 +164,11 @@ td.pos{color:#1f7a4d;font-weight:700}
 </section>
 
 <section id="budget">
-  <h2>תקציב S1 (₪, שער 4.0)</h2>
+  <h2>תקציב (₪, שער 4.0)</h2>
   <p class="scroll-hint no-print">בנייד אפשר לגלול את הטבלה הצידה ←</p>
   <div class="table-wrap"><table class="alt">
   <thead><tr><th>שורה</th><th>El Al</th><th>Wizz</th><th>Austrian</th><th>סטטוס</th></tr></thead>
-  <tbody><tr><td>טיסות ל-5 (תינוק על הברכיים)</td><td>9,242</td><td>8,821</td><td>6,616</td><td><span class="badge v">מאומת</span> 3.11.26</td></tr><tr><td>מזוודות / תוספות</td><td>700</td><td>1,830</td><td>800</td><td><span class="badge e">הערכה</span></td></tr><tr><td>לינה ליד KRK בהלוך (HGI)</td><td>1,040</td><td>—</td><td>—</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Hotel Bešeňová TMR, חצי פנסיון (3/4/4 לילות)</td><td>4,000</td><td>5,500</td><td>5,500</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Lomnica Garden (4/4/5 לילות)</td><td>2,352</td><td>2,352</td><td>2,940</td><td><span class="badge v">מאומת</span> 2026</td></tr><tr><td>לינה ליד KRK בחזור (Hampton/HGI)</td><td>920</td><td>1,040</td><td>—</td><td><span class="badge e">הערכה</span></td></tr><tr><td>השכרת רכב 7 מקומות, 9 ימים</td><td>2,520</td><td>2,520</td><td>2,520</td><td><span class="badge e">הערכה</span></td></tr><tr><td>דמי גבול €30 + 3 מושבים €102 + ויניטה €10.80</td><td>571</td><td>571</td><td>571</td><td><span class="badge v">מאומת</span></td></tr><tr><td>דלק + חניות</td><td>720</td><td>720</td><td>720</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Tatralandia + Chopok + פארק מים Bešeňová</td><td>—</td><td>—</td><td>—</td><td>כלול ב-TMR</td></tr><tr><td>שאר האטרקציות (Skalnaté, Hrebienok, Tricklandia, AquaCity, Solisko, שיט, Orava, Gopass)</td><td>1,254</td><td>1,254</td><td>1,254</td><td><span class="badge v">מאומת</span> / <span class="badge e">הערכה</span></td></tr><tr><td>אוכל ל-5, 10 ימים (€570)</td><td>2,280</td><td>2,280</td><td>2,280</td><td><span class="badge e">הערכה</span></td></tr><tr class="me"><td><b>סה"כ בסיס</b> (אותה שיטה כמו A2)</td><td><b>25,599</b></td><td><b>26,888</b></td><td><b>23,201</b></td><td></td></tr><tr><td>רזרבה 10% על ההוצאות בלי טיסות</td><td>1,566</td><td>1,624</td><td>1,579</td><td><span class="badge e">הערכה</span></td></tr><tr class="me"><td><b>סה"כ עם רזרבה</b></td><td><b>27,165</b></td><td><b>28,512</b></td><td><b>24,780</b></td><td></td></tr><tr><td>מרווח מתקרת 30,000 ₪ (בסיס)</td><td class="pos">+4,401</td><td class="pos">+3,112</td><td class="pos">+6,799</td><td></td></tr></tbody></table></div>
+  <tbody><tr><td>טיסות ל-5 (תינוק על הברכיים)</td><td>9,242</td><td>8,821</td><td>6,616</td><td><span class="badge v">מאומת</span> 3.11.26</td></tr><tr><td>מזוודות / תוספות</td><td>700</td><td>1,830</td><td>800</td><td><span class="badge e">הערכה</span></td></tr><tr><td>לינה ליד KRK בהלוך (HGI)</td><td>1,040</td><td>—</td><td>—</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Hotel Bešeňová TMR, חצי פנסיון (3/4/4 לילות)</td><td>4,000</td><td>5,500</td><td>5,500</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Lomnica Garden (4/4/5 לילות)</td><td>2,352</td><td>2,352</td><td>2,940</td><td><span class="badge v">מאומת</span> 2026</td></tr><tr><td>לינה ליד KRK בחזור (Hampton/HGI)</td><td>920</td><td>1,040</td><td>—</td><td><span class="badge e">הערכה</span></td></tr><tr><td>השכרת רכב 7 מקומות, 9 ימים</td><td>2,520</td><td>2,520</td><td>2,520</td><td><span class="badge e">הערכה</span></td></tr><tr><td>דמי גבול €30 + 3 מושבים €102 + ויניטה €10.80</td><td>571</td><td>571</td><td>571</td><td><span class="badge v">מאומת</span></td></tr><tr><td>דלק + חניות</td><td>720</td><td>720</td><td>720</td><td><span class="badge e">הערכה</span></td></tr><tr><td>Tatralandia + Chopok + פארק מים Bešeňová</td><td>—</td><td>—</td><td>—</td><td>כלול ב-TMR</td></tr><tr><td>שאר האטרקציות (Skalnaté, Hrebienok, Tricklandia, AquaCity, Solisko, שיט, Orava, Gopass)</td><td>1,254</td><td>1,254</td><td>1,254</td><td><span class="badge v">מאומת</span> / <span class="badge e">הערכה</span></td></tr><tr><td>אוכל ל-5, 10 ימים (€570)</td><td>2,280</td><td>2,280</td><td>2,280</td><td><span class="badge e">הערכה</span></td></tr><tr class="me"><td><b>סה"כ בסיס</b></td><td><b>25,599</b></td><td><b>26,888</b></td><td><b>23,201</b></td><td></td></tr><tr><td>רזרבה 10% על ההוצאות בלי טיסות</td><td>1,566</td><td>1,624</td><td>1,579</td><td><span class="badge e">הערכה</span></td></tr><tr class="me"><td><b>סה"כ עם רזרבה</b></td><td><b>27,165</b></td><td><b>28,512</b></td><td><b>24,780</b></td><td></td></tr><tr><td>מרווח מתקרת 30,000 ₪ (בסיס)</td><td class="pos">+4,401</td><td class="pos">+3,112</td><td class="pos">+6,799</td><td></td></tr></tbody></table></div>
   <ul class="note small">
   <li><b>כלול ב-TMR</b> (כרטיס אחד לאדם לכל לילה, מלבד יום ההגעה <span class="badge c">לבדוק</span>, ונדרש רישום ב-Gopass). המחיר המלא לעיון: Tatralandia קיץ 2026, ‏€42 למבוגר ו-€32 לילד בקופה, ~€33 באונליין <span class="badge v">מאומת</span>. Chopok: €19–31 באונליין <span class="badge v">מאומת</span>. ילדים מתחת לגיל 6 חינם.</li>
   <li><b>אטרקציות בתשלום:</b>
@@ -182,25 +181,7 @@ td.pos{color:#1f7a4d;font-weight:700}
       <li>Gopass €15 <span class="badge e">הערכה</span></li>
     </ul></li>
   <li><b>אוכל:</b> ימי חצי פנסיון ~€30, ימי בישול או מסעדה ~€75, ימי מעבר ~€50 <span class="badge e">הערכה</span>. ארוחה זולה בסלובקיה עולה בערך €8 (Numbeo).</li>
-  <li><b>לא כלולים, כמו ב-A2:</b> ביטוח נסיעות (~500–900 ₪) וכיסוי מלא לרכב (~€70–135).</li>
-  <li>הקובץ המלא עם מקורות לכל שורה: <code>trip/S1_budget.csv</code>.</li></ul>
-</section>
-
-<section id="compare">
-  <h2>A2 מול S1</h2>
-  <div class="table-wrap"><table class="alt">
-  <thead><tr><th></th><th>A2 · Legoland → CP → Abtenau</th><th>S1 · Bešeňová → Lomnica</th></tr></thead>
-  <tbody>
-  <tr><td>בסיס כולל טיסות (4.0)</td><td>~29,460 ₪ (מרווח 540)</td><td>~23,200 (Austrian) · ~25,600 (El Al) · ~26,900 (Wizz)</td></tr>
-  <tr><td>עם רזרבה 10%</td><td>~31,675 ₪, <b class="neg">מעל התקרה</b></td><td>24,780 · 27,165 · 28,512</td></tr>
-  <tr><td>טיסות</td><td>Lufthansa ישירה ל-MUC, ‏7,310 ₪</td><td>El Al ישירה ל-KRK, ‏9,242 ₪ (או Wizz / Austrian)</td></tr>
-  <tr><td>החלפות לינה</td><td>3</td><td>2 בסיסים, ועוד לילות ליד השדה (ב-El Al: 4 מקומות)</td></tr>
-  <tr><td>יום הנהיגה הארוך</td><td>3:32</td><td>2:42</td></tr>
-  <tr><td>לילדים</td><td>Legoland, Aqua Mundo</td><td>Bešeňová, Tatralandia, AquaCity, Tricklandia</td></tr>
-  <tr><td>נוף</td><td>אלפים, טירות, Königssee</td><td>הטטרה, אגמי הרים, רכבלים</td></tr>
-  <tr><td>אוכל</td><td>~€1,050</td><td>~€570 <span class="badge e">הערכה</span></td></tr>
-  <tr><td>סיכון מרכזי</td><td>צמוד לתקרה, אישור CP</td><td>עומסים באוגוסט, שעות טיסה, אין מחירי 2027</td></tr>
-  </tbody></table></div>
+  <li><b>לא כלולים:</b> ביטוח נסיעות (~500–900 ₪) וכיסוי מלא לרכב (~€70–135).</li></ul>
 </section>
 
 <section id="logistics">
@@ -225,14 +206,14 @@ td.pos{color:#1f7a4d;font-weight:700}
   </ul>
 </section>
 </main>
-<footer class="wrap small muted" style="padding:24px 0 90px">S1 נבנה ב-3.11.2026 · לא הוזמן כלום · מפה © OpenStreetMap</footer>
+<footer class="wrap small muted" style="padding:24px 0 90px">התוכנית נבנתה ב-3.11.2026 · לא הוזמן כלום · מפה © OpenStreetMap</footer>
 
 <nav class="tabbar no-print" id="tabbar" aria-label="ניווט תחתון">
   <a href="#top"><svg class="ic"><use href="#i-home"/></svg><span>ראשי</span></a>
   <a href="#maps"><svg class="ic"><use href="#i-map"/></svg><span>מפה</span></a>
   <a href="#itinerary"><svg class="ic"><use href="#i-cal"/></svg><span>מסלול</span></a>
   <a href="#budget"><svg class="ic"><use href="#i-wallet"/></svg><span>תקציב</span></a>
-  <a href="#compare"><svg class="ic"><use href="#i-more"/></svg><span>A2 מול S1</span></a>
+  <a href="#logistics"><svg class="ic"><use href="#i-more"/></svg><span>לוגיסטיקה</span></a>
 </nav>
 <script src="vendor/leaflet.js"></script>
 <script>
@@ -242,7 +223,7 @@ function ap(t){document.documentElement.dataset.theme=t;tb.setAttribute('aria-pr
 ap(document.documentElement.dataset.theme||'light');
 tb.addEventListener('click',function(){var t=document.documentElement.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('ft-theme',t);}catch(e){}ap(t);});
 if(!window.L)return;
-var map=L.map('s1Map',{scrollWheelZoom:false});
+var map=L.map('tripMap',{scrollWheelZoom:false});
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 var R={"krk_bes": [[50.0749, 19.7898], [50.0684, 19.7906], [50.0739, 19.8096], [50.0427, 19.8074], [49.9975, 19.8553], [49.9907, 19.9157], [49.9688, 19.9046], [49.9594, 19.8886], [49.937, 19.895], [49.9069, 19.8695], [49.8794, 19.8781], [49.8769, 19.9036], [49.858, 19.9092], [49.8372, 19.9487], [49.8287, 19.9511], [49.8131, 19.9225], [49.7947, 19.9235], [49.7764, 19.9572], [49.7173, 19.9815], [49.7015, 19.9628], [49.6935, 19.9034], [49.6777, 19.8886], [49.6029, 19.924], [49.5812, 19.8909], [49.5712, 19.7902], [49.5382, 19.7161], [49.5268, 19.7127], [49.5131, 19.7245], [49.4799, 19.6939], [49.428, 19.6755], [49.3788, 19.6311], [49.3596, 19.6317], [49.3495, 19.5847], [49.3208, 19.5603], [49.3133, 19.5425], [49.3067, 19.4841], [49.2889, 19.4937], [49.28, 19.4634], [49.2681, 19.4581], [49.259, 19.4354], [49.2641, 19.4128], [49.2546, 19.403], [49.2673, 19.3679], [49.261, 19.3585], [49.2549, 19.3404], [49.2309, 19.3375], [49.2319, 19.3117], [49.2202, 19.299], [49.1838, 19.3084], [49.1477, 19.2842], [49.1026, 19.3038], [49.1061, 19.2993], [49.0889, 19.3954], [49.0949, 19.4313], [49.1045, 19.4369]], "bes_lg": [[49.1045, 19.4369], [49.0976, 19.4345], [49.0934, 19.4261], [49.0975, 19.4377], [49.0909, 19.4506], [49.0879, 19.4698], [49.0912, 19.5268], [49.083, 19.5578], [49.0817, 19.5831], [49.0745, 19.5986], [49.0583, 19.6656], [49.0533, 19.7161], [49.0594, 19.749], [49.051, 19.7863], [49.0576, 19.8283], [49.0563, 19.8565], [49.0707, 19.8995], [49.0638, 19.9575], [49.0709, 19.9795], [49.0705, 20.0006], [49.0807, 20.0467], [49.0859, 20.0579], [49.0956, 20.0594], [49.0972, 20.0697], [49.1088, 20.0525], [49.1109, 20.0569], [49.1058, 20.0675], [49.1067, 20.0755], [49.1114, 20.0662], [49.1114, 20.0713], [49.1182, 20.0689], [49.1191, 20.0627], [49.1196, 20.0671], [49.1123, 20.0682], [49.1107, 20.0763], [49.1169, 20.0828], [49.1147, 20.094], [49.1179, 20.0994], [49.1173, 20.1135], [49.1206, 20.1133], [49.1172, 20.1252], [49.1169, 20.1646], [49.1258, 20.1956], [49.1317, 20.2003], [49.1398, 20.2209], [49.1402, 20.2363], [49.1503, 20.2524], [49.1553, 20.2709], [49.1624, 20.2722], [49.1655, 20.28]], "lg_krk": [[49.1655, 20.28], [49.1718, 20.2939], [49.1836, 20.2897], [49.2064, 20.3093], [49.2203, 20.3328], [49.2324, 20.3134], [49.263, 20.3006], [49.2708, 20.2798], [49.2804, 20.209], [49.2744, 20.1883], [49.2803, 20.1758], [49.3554, 20.1339], [49.3654, 20.1155], [49.3997, 20.1073], [49.4574, 20.0696], [49.4767, 20.0507], [49.4775, 20.0167], [49.4693, 20.004], [49.4912, 19.9858], [49.507, 19.9892], [49.5208, 19.9731], [49.5396, 19.971], [49.5541, 19.94], [49.5732, 19.9477], [49.5862, 19.9324], [49.6156, 19.9252], [49.6754, 19.8881], [49.6938, 19.9045], [49.7071, 19.9722], [49.7168, 19.9817], [49.7413, 19.9777], [49.7835, 19.9504], [49.7945, 19.9237], [49.813, 19.9226], [49.8286, 19.9512], [49.8373, 19.9488], [49.858, 19.9095], [49.877, 19.9037], [49.8796, 19.8783], [49.9081, 19.8696], [49.9368, 19.8951], [49.9594, 19.8888], [49.9905, 19.917], [49.9975, 19.8554], [50.0428, 19.8076], [50.0744, 19.8112], [50.0684, 19.7906], [50.0749, 19.7898]]};
 var cols={krk_bes:'#e76f51',bes_lg:'#2a9d8f',lg_krk:'#264653'};

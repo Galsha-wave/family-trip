@@ -527,7 +527,5 @@ html.gd-open{overflow:hidden}
 @media (min-width:780px){.gd-imgs.n1 img{aspect-ratio:21/9}.gd-imgs.n2 img{aspect-ratio:3/2}}
 @media print{.day-guides{display:none!important}}
 
-/* A2 */
-.gd-a2{background:var(--brand-soft);border-radius:var(--r-s);padding:10px 14px;border:1px solid var(--line)}
 @media (min-width:900px){.cols.cols-3{grid-template-columns:repeat(3,1fr)}}
 .day-body li.cost{list-style:none;margin-inline-start:-1.3em;padding:6px 12px;border-radius:12px;background:var(--bg-2)}
