@@ -11,20 +11,20 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip" href="#main">דילוג לתוכן</a>
 
 <header class="topbar">
   <div class="wrap topbar-in">
-    <a class="brand" href="#top" aria-label="לראש הדף"><span aria-hidden="true">❄</span> שווקי חג המולד</a>
+    <a class="brand" href="#/home" aria-label="לעמוד הבית"><span aria-hidden="true">❄</span> שווקי חג המולד</a>
     <nav aria-label="ניווט ראשי">
       <ul class="nav">
-        <li><a href="#compare">השוואה</a></li>
-        <li><a href="#budapest">בודפשט</a></li>
-        <li><a href="#palaces">ארמונות</a></li>
-        <li><a href="#vienna">וינה</a></li>
-        <li><a href="#prague">פראג</a></li>
-        <li><a href="#deadlines">דדליינים</a></li>
-        <li><a href="#open">פתוח</a></li>
+        <li><a href="#/home">בית</a></li>
+        <li><a href="#/compare">השוואה</a></li>
+        <li><a href="#/budapest">בודפשט</a></li>
+        <li><a href="#/palaces">ארמונות</a></li>
+        <li><a href="#/vienna">וינה</a></li>
+        <li><a href="#/prague">פראג</a></li>
+        <li><a href="#/map">מפה</a></li>
+        <li><a href="#/todo">דדליינים ושאלות</a></li>
       </ul>
     </nav>
     <button class="theme" id="themeBtn" type="button" aria-label="החלפת מצב כהה/בהיר"><span aria-hidden="true">◐</span></button>
@@ -38,16 +38,16 @@
   </div>
 </div>
 
-<main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-title">
+<main id="main" tabindex="-1">
+  <section class="hero" id="top" data-page="home" data-title="בית" aria-labelledby="hero-title">
     <div class="wrap">
       <p class="eyebrow">סופ״ש משפחתי · טיסות ישירות מנתב״ג</p>
       <h1 id="hero-title">שווקי חג המולד <span class="nowrap"><bdi class="n">3–6.12.2026</bdi></span></h1>
       <p class="lead">חמישי עד ראשון. משפחה של 5: שני מבוגרים, ילד בן 6, ילדה בת 3 ותינוק.</p>
       <ol class="podium" aria-label="דירוג היעדים">
-        <li class="p1"><a href="#budapest"><span class="rank">1</span><span class="city">בודפשט</span><span class="why">הכי משתלמת</span></a></li>
-        <li class="p2"><a href="#vienna"><span class="rank">2</span><span class="city">וינה</span><span class="why">הכי נוחה לילדים</span></a></li>
-        <li class="p3"><a href="#prague"><span class="rank">3</span><span class="city">פראג</span><span class="why">שלישית</span></a></li>
+        <li class="p1"><a href="#/budapest"><span class="rank">1</span><span class="city">בודפשט</span><span class="why">הכי משתלמת</span></a></li>
+        <li class="p2"><a href="#/vienna"><span class="rank">2</span><span class="city">וינה</span><span class="why">הכי נוחה לילדים</span></a></li>
+        <li class="p3"><a href="#/prague"><span class="rank">3</span><span class="city">פראג</span><span class="why">שלישית</span></a></li>
       </ol>
       <ul class="facts">
         <li><span class="k">תאריכים</span> ה׳ <bdi class="n">3.12</bdi> – א׳ <bdi class="n">6.12.2026</bdi></li>
@@ -57,35 +57,55 @@
     </div>
   </section>
 
-  <section id="compare" class="block" aria-labelledby="compare-title">
+  <section id="home-menu" data-page="home" data-title="בית" class="block" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 id="menu-title">מה יש באתר</h2>
+      <ul class="menu-tiles">
+        <li><a href="#/compare"><span class="ico" aria-hidden="true">📊</span><span class="t">השוואה</span><span class="d">שלושת היעדים, טיסות וסה״כים</span></a></li>
+        <li><a href="#/budapest"><span class="ico" aria-hidden="true">1️⃣</span><span class="t">בודפשט</span><span class="d">מומלצת: טיסות, דירות, מלונות ושווקים</span></a></li>
+        <li><a href="#/palaces"><span class="ico" aria-hidden="true">🏰</span><span class="t">ארמונות בודפשט</span><span class="d">גבעת הטירה עם עגלה, מסלול לשבת</span></a></li>
+        <li><a href="#/vienna"><span class="ico" aria-hidden="true">2️⃣</span><span class="t">וינה</span><span class="d">טיסות, דירות, מלון ושווקים</span></a></li>
+        <li><a href="#/prague"><span class="ico" aria-hidden="true">3️⃣</span><span class="t">פראג</span><span class="d">טיסות, דירות, מלון ושווקים</span></a></li>
+        <li><a href="#/map"><span class="ico" aria-hidden="true">🗺️</span><span class="t">מפה</span><span class="d">שווקים, מלונות וארמונות</span></a></li>
+        <li><a href="#/todo"><span class="ico" aria-hidden="true">⏰</span><span class="t">דדליינים ושאלות</span><span class="d">מועדי ביטול ומה עוד חסר</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="compare" data-page="compare" data-title="השוואה" class="block" aria-labelledby="compare-title">
     <div class="wrap">
       <h2 id="compare-title">השוואת יעדים</h2>
-      <p class="note"><strong>הערכה:</strong> הסה״כים משוערים, לא סופיים, ועלולים להשתנות. שום דבר לא הוזמן. הסה״כ כולל טיסות הלוך-חזור לכל המשפחה ומלון מרכזי ל-3 לילות. השאר הוא הקצבה משוערת לתחבורה, אוכל ואטרקציות (הפירוט המדויק עוד ממתין). שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi>, <bdi class="n">€1≈365 HUF</bdi></p>
+      <p class="note"><strong>טיסות:</strong> שעות מקומיות, המראה→נחיתה. מקור: Google Flights, הלוך-חזור ל-5 כולל התינוק, בלי מזוודה רשומה.</p>
+      <p class="note"><strong>דירות:</strong> מקור Booking, נבדק בזמן אמת ב-<bdi class="n">3.11.2026</bdi>, ל-3 לילות <bdi class="n">3–6.12</bdi> כולל מסים. בכל הדירות יש מטבח, עריסה לפי בקשה וביטול חינם, והן במרחק של עד <bdi class="n">1.5</bdi> ק״מ מהשוק. מעלית מצוינת רק איפה שנכתב במודעה. לא הוזמן. דירות הן האפשרות המועדפת, מלונות כגיבוי.</p>
+      <p class="note"><strong>הערכה:</strong> הסה״כים משוערים, לא סופיים, ועלולים להשתנות. שום דבר לא הוזמן. הסה״כ הראשי הוא טיסות הלוך-חזור לכל המשפחה + דירה ל-3 לילות, <strong>לא כולל מזוודות, אוכל ואטרקציות</strong>. החלופה עם מלון (גיבוי) כוללת גם הקצבה משוערת לתחבורה, אוכל ואטרקציות (הפירוט המדויק עוד ממתין). שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi>, <bdi class="n">€1≈365 HUF</bdi></p>
       <div class="table-wrap">
       <table class="cmp">
         <caption class="sr-only">השוואה בין בודפשט, וינה ופראג</caption>
-        <thead><tr><th scope="col">יעד</th><th scope="col">טיסות</th><th scope="col">מלון</th><th scope="col">שוק מרכזי</th><th scope="col">סה״כ משוער</th></tr></thead>
+        <thead><tr><th scope="col">יעד</th><th scope="col">טיסות</th><th scope="col">דירה (מועדף)</th><th scope="col">מלון (גיבוי)</th><th scope="col">שוק מרכזי</th><th scope="col">סה״כ משוער</th></tr></thead>
         <tbody>
           <tr class="rec">
             <th scope="row" data-label="יעד"><span class="rank-dot">1</span> בודפשט <span class="badge ok">מומלץ</span><br><small>הכי משתלמת</small></th>
-            <td data-label="טיסות"><span>Bluebird · <bdi class="n">$2,068</bdi> (כ-<bdi class="n">₪6,518</bdi>)</span></td>
-            <td data-label="מלון"><span>Exe Budapest Center · <bdi class="n">€1,739</bdi> (כ-<bdi class="n">₪6,120</bdi>)</span></td>
+            <td data-label="טיסות"><span>Bluebird <bdi class="n">BZ444</bdi> · <bdi class="n">$2,068</bdi> (כ-<bdi class="n">₪6,518</bdi>)<span class="ftimes"><span>הלוך <bdi class="n">10:30→13:05</bdi></span><span>חזור <bdi class="n">14:05→18:20</bdi></span></span><a class="link small" href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTAzagcIARIDVExWcgcIARIDQlVEGh4SCjIwMjYtMTItMDZqBwgBEgNCVURyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">Google Flights ↗</a></span></td>
+            <td data-label="דירה (מועדף)"><span><strong>BP-EST Város</strong> · <bdi class="n">€888</bdi><br><small><bdi class="n">450</bdi> מ׳ מהשוק · <bdi class="n">71</bdi> מ״ר · <span class="nowrap">ביטול עד <bdi class="n">2.12</bdi></span></small><br><a class="link small" href="https://www.booking.com/hotel/hu/bp-est-varos.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">Booking ↗</a></span></td>
+            <td data-label="מלון (גיבוי)"><span>Exe Budapest Center · <bdi class="n">€1,739</bdi> (כ-<bdi class="n">₪6,120</bdi>)</span></td>
             <td data-label="שוק מרכזי"><span>Vörösmarty + Advent Bazilika</span></td>
-            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪15,000–16,300</bdi></strong><br><small>עם המלון המרכזי · הערכה</small></span></td>
+            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪9,640</bdi></strong><br><small>טיסות + דירה · הערכה</small><br><small class="muted">עם מלון והקצבה: כ-<bdi class="n">₪15,000–16,300</bdi></small></span></td>
           </tr>
           <tr>
             <th scope="row" data-label="יעד"><span class="rank-dot">2</span> וינה<br><small>הכי נוחה לילדים</small></th>
-            <td data-label="טיסות"><span>Austrian · כ-<bdi class="n">₪6,061</bdi> (כולל מושב לתינוק)</span></td>
-            <td data-label="מלון"><span>The Weekend Hotel · <bdi class="n">€2,198</bdi> (כ-<bdi class="n">₪7,740</bdi>)</span></td>
+            <td data-label="טיסות"><span>Austrian · כ-<bdi class="n">₪6,061</bdi> (כולל מושב לתינוק)<span class="ftimes"><span>הלוך <bdi class="n">OS80</bdi> <bdi class="n">15:40→18:25</bdi> או <bdi class="n">OS84</bdi> <bdi class="n">05:55→08:40</bdi></span><span>חזור <bdi class="n">10:20→14:45</bdi> או <bdi class="n">20:15→00:40</bdi></span></span><a class="link small" href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTAzagcIARIDVExWcgcIARIDVklFGh4SCjIwMjYtMTItMDZqBwgBEgNWSUVyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">Google Flights ↗</a></span></td>
+            <td data-label="דירה (מועדף)"><span><strong>Rothensteiner (אפרטהוטל)</strong> · <bdi class="n">€950</bdi><br><small><bdi class="n">1.1</bdi> ק״מ מהשוק · <bdi class="n">70</bdi> מ״ר · <span class="nowrap">ביטול עד <bdi class="n">19.11</bdi></span></small><br><a class="link small" href="https://www.booking.com/hotel/at/rothensteiner.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">Booking ↗</a></span></td>
+            <td data-label="מלון (גיבוי)"><span>The Weekend Hotel · <bdi class="n">€2,198</bdi> (כ-<bdi class="n">₪7,740</bdi>)</span></td>
             <td data-label="שוק מרכזי"><span>Rathausplatz</span></td>
-            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪16,800–18,500</bdi></strong><br><small>הערכה</small></span></td>
+            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪9,390</bdi></strong><br><small>טיסות + דירה · הערכה</small><br><small class="muted">עם מלון והקצבה: כ-<bdi class="n">₪16,800–18,500</bdi></small></span></td>
           </tr>
           <tr>
             <th scope="row" data-label="יעד"><span class="rank-dot">3</span> פראג</th>
-            <td data-label="טיסות"><span>Israir · <bdi class="n">₪9,544</bdi></span></td>
-            <td data-label="מלון"><span>Residence BENE <bdi class="n">3*</bdi> · <bdi class="n">€1,438</bdi> (כ-<bdi class="n">₪5,060</bdi>, 3 לילות, כולל ארוחת בוקר)</span></td>
+            <td data-label="טיסות"><span>Israir <bdi class="n">6H763</bdi> · <bdi class="n">₪9,544</bdi><span class="ftimes"><span>הלוך <bdi class="n">13:30→16:35</bdi></span><span>חזור <bdi class="n">13:20→18:00</bdi></span></span><a class="link small" href="https://www.google.com/travel/flights/search?tfs=CBwQAho_EgoyMDI2LTEyLTAzIh8KA1RMVhIKMjAyNi0xMi0wMxoDUFJHKgI2SDIDNzYzagcIARIDVExWcgcIARIDUFJHGh4SCjIwMjYtMTItMDZqBwgBEgNQUkdyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">Google Flights ↗</a></span></td>
+            <td data-label="דירה (מועדף)"><span><strong>Aparthotel Rimska 14</strong> · <bdi class="n">€1,196</bdi><br><small><bdi class="n">1.4</bdi> ק״מ מהכיכר · <bdi class="n">43</bdi> מ״ר · <span class="nowrap">ביטול עד <bdi class="n">28.11</bdi></span></small><br><a class="link small" href="https://www.booking.com/hotel/cz/rimska-14-residence.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">Booking ↗</a></span></td>
+            <td data-label="מלון (גיבוי)"><span>Residence BENE <bdi class="n">3*</bdi> · <bdi class="n">€1,438</bdi> (כ-<bdi class="n">₪5,060</bdi>, 3 לילות, כולל ארוחת בוקר)</span></td>
             <td data-label="שוק מרכזי"><span>כיכר העיר העתיקה וכיכר ואצלב</span></td>
-            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪16,800–17,900</bdi></strong><br><small>הערכה</small></span></td>
+            <td data-label="סה״כ משוער"><span><strong>כ-<bdi class="n">₪13,750</bdi></strong><br><small>טיסות + דירה · הערכה</small><br><small class="muted">עם מלון והקצבה: כ-<bdi class="n">₪16,800–17,900</bdi></small></span></td>
           </tr>
         </tbody>
       </table>
@@ -93,7 +113,7 @@
     </div>
   </section>
 
-  <section id="map-sec" class="block alt" aria-labelledby="map-title">
+  <section id="map-sec" data-page="map" data-title="מפה" class="block alt" aria-labelledby="map-title">
     <div class="wrap">
       <h2 id="map-title">מפה: שווקים, מלונות וארמונות</h2>
       <div class="seg" role="group" aria-label="בחירת עיר במפה">
@@ -108,7 +128,7 @@
   </section>
 
   <!-- BUDAPEST -->
-  <section id="budapest" class="block city" aria-labelledby="bud-title">
+  <section id="budapest" data-page="budapest" data-title="בודפשט" class="block city" aria-labelledby="bud-title">
     <div class="wrap">
       <header class="city-head"><span class="rank-big">1</span><div><h2 id="bud-title">בודפשט</h2><p class="muted">הכי משתלמת · מומלצת</p></div></header>
 
@@ -120,7 +140,9 @@
             <li><span class="k">הלוך</span> <bdi class="n">10:30 → 13:05</bdi></li>
             <li><span class="k">חזור</span> <bdi class="n">14:05 → 18:20</bdi></li>
             <li><span class="k">מחיר</span> <bdi class="n">$2,068</bdi> (כ-<bdi class="n">₪6,518</bdi>)</li>
+            <li><span class="k">טיסה</span> <bdi class="n">BZ444</bdi>, כולל התינוק, בלי מזוודה רשומה</li>
           </ul>
+          <a class="link small" href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTAzagcIARIDVExWcgcIARIDQlVEGh4SCjIwMjYtMTItMDZqBwgBEgNCVURyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">חיפוש הלוך-חזור ל-5 ↗</a>
           <a class="btn" href="https://www.google.com/travel/flights/search?tfs=CBwQAhpBEgoyMDI2LTEyLTAzIh8KA1RMVhIKMjAyNi0xMi0wMxoDQlVEKgJCWjIDNDQ0KABqBwgBEgNUTFZyBwgBEgNCVUQaIBIKMjAyNi0xMi0wNigAagcIARIDQlVEcgcIARIDVExWQAFAAUACQAJAA0gBcAGCAQsI____________AZgBAQ&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">לחיפוש ב-Google Flights ↗</a>
         </article>
         <article class="card">
@@ -128,13 +150,46 @@
           <ul class="kv">
             <li><span class="k">מחיר</span> <bdi class="n">$1,702</bdi></li>
             <li><span class="k">תוספות</span> <bdi class="n">€35</bdi> לטיסה על התינוק, ו-Priority של <bdi class="n">€10–60</bdi> לנוסע לטיסה</li>
-            <li><span class="k">חזור</span> כנראה ב-<bdi class="n">05:00</bdi> <span class="badge warn">לא אומת</span></li>
+            <li><span class="k">בשעות יום</span> הלוך <bdi class="n">10:10→12:45</bdi>, חזור <bdi class="n">14:20→18:35</bdi>, <bdi class="n">$2,877</bdi></li>
+            <li><span class="k">הכי זול</span> הלוך בערב <bdi class="n">19:30</bdi>, חזור <bdi class="n">05:00→09:15</bdi></li>
+            <li><span class="k">כבודה</span> בלי Priority רק תיק מתחת למושב. מחיר ה-Priority לא מוצג</li>
           </ul>
-          <p class="small muted">אין קישור במקור.</p>
+          <a class="btn" href="https://www.wizzair.com/en-gb/booking/select-flight/TLV/BUD/2026-12-03/2026-12-06/2/2/1" target="_blank" rel="noopener noreferrer">ב-Wizz Air ↗</a>
         </article>
       </div>
 
-      <h3>מלונות</h3>
+      <h3>דירות עם מטבח (מועדף)</h3>
+      <p class="note"><strong>דירות:</strong> מקור Booking, נבדק בזמן אמת ב-<bdi class="n">3.11.2026</bdi>, ל-3 לילות <bdi class="n">3–6.12</bdi> כולל מסים. בכל הדירות יש מטבח, עריסה לפי בקשה וביטול חינם, והן במרחק של עד <bdi class="n">1.5</bdi> ק״מ מהשוק. מעלית מצוינת רק איפה שנכתב במודעה. לא הוזמן.</p>
+      <div class="cards">
+        <article class="card">
+          <h4>BP-EST Város <span class="badge ok">בסה״כ המשוער</span></h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€888</bdi></strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <bdi class="n">450</bdi> מ׳ מהשוק</li>
+            <li><span class="k">חדרים</span> 2 חדרי שינה</li>
+            <li><span class="k">גודל</span> <bdi class="n">71</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">דירוג</span> <bdi class="n">9.2</bdi></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">2.12</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/hu/bp-est-varos.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+        <article class="card">
+          <h4>Apaczai 17</h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€715</bdi></strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <bdi class="n">200</bdi> מ׳ מהשוק</li>
+            <li><span class="k">חדרים</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">גודל</span> <bdi class="n">39</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">דירוג</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">19.11</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/hu/apaczai-17-cozy-elegance-near-chain-bridge.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+      </div>
+
+      <h3>מלונות (גיבוי)</h3>
       <div class="cards">
         <article class="card">
           <h4>Exe Budapest Center <span class="stars" aria-label="4 כוכבים">★★★★</span> <span class="badge ok">קרוב לשוק</span></h4>
@@ -165,7 +220,7 @@
             <li><span class="k">תאריכים</span> <bdi class="n">13.11–31.12.2026</bdi></li>
             <li><span class="k">שעות</span> ב׳–ה׳ וא׳ <bdi class="n">11:00–21:00</bdi>, ו׳–ש׳ <bdi class="n">11:00–22:00</bdi></li>
             <li><span class="k">לילדים</span> רכבת ילדים חינם: ב׳–ו׳ <bdi class="n">14:00–20:00</bdi>, סופ״ש <bdi class="n">11:00–20:00</bdi> <small class="muted">(בעמוד כתוב 11p.m., כנראה טעות דפוס)</small></li>
-            <li><span class="k">עגלה</span> מרוצף ושטוח. עדיף לא בערבי סופ״ש: הכי טוב ב׳–ה׳ <bdi class="n">11:00–15:00</bdi> או מיד בפתיחה בסופ״ש</li>
+            <li><span class="k">עגלה</span> הכי שקט בחמישי–שישי <bdi class="n">11:00–14:00</bdi> <span class="badge warn">מקור לא רשמי</span></li>
             <li><span class="k">אוכל</span> צמחוני בשוק: לאנגוש (פשוט או עם גבינה ושמנת), מנות תפוחי אדמה, ירקות מאודים ופולנטה עם גבינת כבשים, לפי תפריט השוק</li>
           </ul>
           <a class="btn" href="https://vorosmartyclassicxmas.hu/en/opening-hours/" target="_blank" rel="noopener noreferrer">שעות פתיחה ↗</a>
@@ -197,7 +252,7 @@
       </div>
 
       <div class="note">
-        <p><strong>טיפ לשווקים עם עגלה:</strong> הכי שקט בחמישי–שישי <bdi class="n">11:00–14:00</bdi>. <span class="badge warn">מקור לא רשמי</span></p>
+        <p><strong>עגלה בשווקים:</strong> הכי שקט בחמישי–שישי <bdi class="n">11:00–14:00</bdi>. <span class="badge warn">מקור לא רשמי</span></p>
         <p>תחנת המטרו M1 ב-Vörösmarty <span class="tag carrier">מנשא בלבד, אפשר לדלג</span></p>
         <p><a class="link small" href="https://vorosmartyclassicxmas.hu/en/opening-hours/" target="_blank" rel="noopener noreferrer">Vörösmarty: שעות ↗</a> <a class="link small" href="https://adventbazilika.hu/nyitvatartas" target="_blank" rel="noopener noreferrer">הבזיליקה: שעות ↗</a></p>
       </div>
@@ -227,7 +282,13 @@
       </div>
 
       <div class="total">
-        <span>סה״כ משוער עם המלון המרכזי</span>
+        <span>סה״כ משוער: Bluebird + BP-EST Város</span>
+        <strong>כ-<bdi class="n">₪9,640</bdi></strong>
+        <small>הערכה בלבד: טיסות + דירה ל-3 לילות. לא כולל מזוודות, אוכל ואטרקציות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
+        <small>שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi></small>
+      </div>
+      <div class="total">
+        <span>חלופה: סה״כ משוער עם המלון המרכזי (גיבוי)</span>
         <strong>כ-<bdi class="n">₪15,000–16,300</bdi></strong>
         <small>הערכה בלבד · המחירים עלולים להשתנות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
         <small>הסה״כ כולל טיסות הלוך-חזור לכל המשפחה ומלון מרכזי ל-3 לילות. השאר הוא הקצבה משוערת לתחבורה, אוכל ואטרקציות (הפירוט המדויק עוד ממתין). שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi>, <bdi class="n">€1≈365 HUF</bdi></small>
@@ -236,7 +297,7 @@
   </section>
 
   <!-- PALACES -->
-  <section id="palaces" class="block alt" aria-labelledby="pal-title">
+  <section id="palaces" data-page="palaces" data-title="ארמונות בודפשט" class="block alt" aria-labelledby="pal-title">
     <div class="wrap">
       <h2 id="pal-title"><span aria-hidden="true">🏰</span> ארמונות בודפשט</h2>
       <p class="muted">המידע מהסייר, ומתייחס ל-<bdi class="n">3–6.12</bdi>. העגלה איתנו כל היום.</p>
@@ -247,6 +308,7 @@
             <li><span class="k">אוטובוס</span> קו <bdi class="n">216</bdi> מ-<bdi>Deák tér</bdi>, או קו <bdi class="n">16</bdi> מ-<bdi>Széll Kálmán tér</bdi>, עד התחנה <bdi>Palota út, gyorslift</bdi></li>
             <li><span class="k">מעליות</span> מעליות <bdi>Tabán</bdi> עד <bdi>Csikós-udvar</bdi>, ומשם הרמפה או המעלית של <bdi>Hauszmann</bdi> אל המוזיאונים</li>
             <li><span class="k">כרטיס</span> כל האוטובוסים בעלי רצפה נמוכה. כרטיס <bdi class="n">500 HUF</bdi></li>
+            <li><span class="k">ברובע</span> ברובע הטירה עצמו יש הרבה אבני מרצפת</li>
             <li><span class="k">להימנע</span> Várkert Bazár וחשמלית 41</li>
           </ul>
           <a class="btn" href="https://mng.hu/megkozelites/" target="_blank" rel="noopener noreferrer">דרכי הגעה ↗</a>
@@ -334,7 +396,7 @@
   </section>
 
   <!-- VIENNA -->
-  <section id="vienna" class="block city" aria-labelledby="vie-title">
+  <section id="vienna" data-page="vienna" data-title="וינה" class="block city" aria-labelledby="vie-title">
     <div class="wrap">
       <header class="city-head"><span class="rank-big">2</span><div><h2 id="vie-title">וינה</h2><p class="muted">הכי נוחה לילדים</p></div></header>
 
@@ -344,13 +406,46 @@
           <h4>Austrian</h4>
           <ul class="kv">
             <li><span class="k">מחיר</span> כ-<bdi class="n">₪6,061</bdi> (כולל מושב לתינוק)</li>
-            <li><span class="k">שעות</span> <span class="badge warn">חסר</span></li>
+            <li><span class="k">הלוך</span> <bdi class="n">OS80</bdi> <bdi class="n">15:40→18:25</bdi> או <bdi class="n">OS84</bdi> <bdi class="n">05:55→08:40</bdi></li>
+            <li><span class="k">חזור</span> <bdi class="n">10:20→14:45</bdi> או <bdi class="n">20:15→00:40</bdi></li>
+            <li><span class="k">חלופה</span> Bluebird לווינה, הלוך <bdi class="n">10:30→13:15</bdi>, <bdi class="n">$2,506</bdi></li>
           </ul>
-          <p class="small muted">אין קישור במקור.</p>
+          <a class="btn" href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTAzagcIARIDVExWcgcIARIDVklFGh4SCjIwMjYtMTItMDZqBwgBEgNWSUVyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">לחיפוש ב-Google Flights ↗</a>
         </article>
       </div>
 
-      <h3>מלון</h3>
+      <h3>דירות עם מטבח (מועדף)</h3>
+      <p class="note"><strong>דירות:</strong> מקור Booking, נבדק בזמן אמת ב-<bdi class="n">3.11.2026</bdi>, ל-3 לילות <bdi class="n">3–6.12</bdi> כולל מסים. בכל הדירות יש מטבח, עריסה לפי בקשה וביטול חינם, והן במרחק של עד <bdi class="n">1.5</bdi> ק״מ מהשוק. מעלית מצוינת רק איפה שנכתב במודעה. לא הוזמן.</p>
+      <div class="cards">
+        <article class="card">
+          <h4>Rothensteiner (אפרטהוטל) <span class="badge ok">בסה״כ המשוער</span></h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€950</bdi></strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <bdi class="n">1.1</bdi> ק״מ מהשוק</li>
+            <li><span class="k">חדרים</span> 2 חדרים</li>
+            <li><span class="k">גודל</span> <bdi class="n">70</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> יש</li>
+            <li><span class="k">דירוג</span> <bdi class="n">8.9</bdi></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">19.11</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/at/rothensteiner.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+        <article class="card">
+          <h4>Stylish Home ברובע 9</h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€1,517</bdi> (מחיר מבצע)</strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">חדרים</span> 2 חדרי שינה</li>
+            <li><span class="k">גודל</span> <bdi class="n">100</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">דירוג</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">28.11</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/at/stylish-home-in-viennas-central-9th-district.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+      </div>
+
+      <h3>מלון (גיבוי)</h3>
       <div class="cards">
         <article class="card">
           <h4>The Weekend Hotel <span class="stars" aria-label="4 כוכבים">★★★★</span></h4>
@@ -431,7 +526,13 @@
       </div>
 
       <div class="total">
-        <span>סה״כ משוער</span>
+        <span>סה״כ משוער: Austrian + Rothensteiner</span>
+        <strong>כ-<bdi class="n">₪9,390</bdi></strong>
+        <small>הערכה בלבד: טיסות + דירה ל-3 לילות. לא כולל מזוודות, אוכל ואטרקציות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
+        <small>שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi></small>
+      </div>
+      <div class="total">
+        <span>חלופה: סה״כ משוער עם המלון (גיבוי)</span>
         <strong>כ-<bdi class="n">₪16,800–18,500</bdi></strong>
         <small>הערכה בלבד · המחירים עלולים להשתנות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
         <small>הסה״כ כולל טיסות הלוך-חזור לכל המשפחה ומלון מרכזי ל-3 לילות. השאר הוא הקצבה משוערת לתחבורה, אוכל ואטרקציות (הפירוט המדויק עוד ממתין). שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi>, <bdi class="n">€1≈365 HUF</bdi></small>
@@ -440,7 +541,7 @@
   </section>
 
   <!-- PRAGUE -->
-  <section id="prague" class="block city alt" aria-labelledby="prg-title">
+  <section id="prague" data-page="prague" data-title="פראג" class="block city alt" aria-labelledby="prg-title">
     <div class="wrap">
       <header class="city-head"><span class="rank-big">3</span><div><h2 id="prg-title">פראג</h2><p class="muted">מקום שלישי</p></div></header>
 
@@ -450,20 +551,52 @@
           <h4>Israir</h4>
           <ul class="kv">
             <li><span class="k">מחיר</span> <bdi class="n">₪9,544</bdi></li>
-            <li><span class="k">שעות</span> <span class="badge warn">חסר</span></li>
+            <li><span class="k">הלוך</span> <bdi class="n">6H763</bdi> <bdi class="n">13:30→16:35</bdi></li>
+            <li><span class="k">חזור</span> <bdi class="n">13:20→18:00</bdi></li>
           </ul>
-          <p class="small muted">אין קישור במקור.</p>
+          <a class="btn" href="https://www.google.com/travel/flights/search?tfs=CBwQAho_EgoyMDI2LTEyLTAzIh8KA1RMVhIKMjAyNi0xMi0wMxoDUFJHKgI2SDIDNzYzagcIARIDVExWcgcIARIDUFJHGh4SCjIwMjYtMTItMDZqBwgBEgNQUkdyBwgBEgNUTFZAAUABQAJAAkADSAFwAYIBCwj___________8BmAEB&amp;hl=en&amp;curr=USD" target="_blank" rel="noopener noreferrer">לחיפוש ב-Google Flights ↗</a>
         </article>
       </div>
 
-      <h3>מלון</h3>
+      <h3>דירות עם מטבח (מועדף)</h3>
+      <p class="note"><strong>דירות:</strong> מקור Booking, נבדק בזמן אמת ב-<bdi class="n">3.11.2026</bdi>, ל-3 לילות <bdi class="n">3–6.12</bdi> כולל מסים. בכל הדירות יש מטבח, עריסה לפי בקשה וביטול חינם, והן במרחק של עד <bdi class="n">1.5</bdi> ק״מ מהשוק. מעלית מצוינת רק איפה שנכתב במודעה. לא הוזמן.</p>
+      <div class="cards">
+        <article class="card">
+          <h4>Aparthotel Rimska 14 <span class="badge ok">בסה״כ המשוער</span></h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€1,196</bdi></strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <bdi class="n">1.4</bdi> ק״מ מהכיכר</li>
+            <li><span class="k">חדרים</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">גודל</span> <bdi class="n">43</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> יש</li>
+            <li><span class="k">דירוג</span> <bdi class="n">9.1</bdi></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">28.11</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/cz/rimska-14-residence.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+        <article class="card">
+          <h4>TurnKey Charles Square</h4>
+          <ul class="kv">
+            <li><span class="k">מחיר</span> <strong><bdi class="n">€1,209</bdi></strong> ל-3 לילות, כולל מסים</li>
+            <li><span class="k">מרחק</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">חדרים</span> דו-מפלסית</li>
+            <li><span class="k">גודל</span> <bdi class="n">45</bdi> מ״ר</li>
+            <li><span class="k">מעלית</span> יש</li>
+            <li><span class="k">דירוג</span> <span class="muted">לא צוין</span></li>
+            <li><span class="k">ביטול חינם</span> עד <bdi class="n">28.11</bdi></li>
+          </ul>
+          <a class="btn" href="https://www.booking.com/hotel/cz/turnkey-verve-apartments.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">לדירה ב-Booking ↗</a>
+        </article>
+      </div>
+
+      <h3>מלון (גיבוי)</h3>
       <div class="cards">
         <article class="card">
           <h4>Residence BENE · <bdi class="n">3*</bdi></h4>
           <p class="cancel"><span aria-hidden="true">⏰</span> ביטול חינם עד <strong><bdi class="n">1.12</bdi></strong></p>
           <ul class="kv">
             <li><span class="k">מחיר</span> <bdi class="n">€1,438</bdi> ל-3 לילות, כולל ארוחת בוקר (כ-<bdi class="n">₪5,060</bdi>)</li>
-            <li><span class="k">מרחק</span> המרחק מהמרכז עוד לא נבדק <span class="badge warn">לא נבדק</span></li>
+            <li><span class="k">מרחק</span> <bdi class="n">0.5</bdi> ק״מ מכיכר העיר העתיקה (לפי Booking)</li>
           </ul>
           <a class="btn" href="https://www.booking.com/hotel/cz/residence-bene.html?checkin=2026-12-03&amp;checkout=2026-12-06&amp;group_adults=2&amp;group_children=3&amp;age=6&amp;age=3&amp;age=0&amp;no_rooms=1" target="_blank" rel="noopener noreferrer">ב-Booking ↗</a>
         </article>
@@ -520,7 +653,13 @@
       </div>
 
       <div class="total">
-        <span>סה״כ משוער</span>
+        <span>סה״כ משוער: Israir + Rimska 14</span>
+        <strong>כ-<bdi class="n">₪13,750</bdi></strong>
+        <small>הערכה בלבד: טיסות + דירה ל-3 לילות. לא כולל מזוודות, אוכל ואטרקציות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
+        <small>שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi></small>
+      </div>
+      <div class="total">
+        <span>חלופה: סה״כ משוער עם המלון (גיבוי)</span>
         <strong>כ-<bdi class="n">₪16,800–17,900</bdi></strong>
         <small>הערכה בלבד · המחירים עלולים להשתנות · לא הוזמן · נבדק <bdi class="n">3.11.2026</bdi></small>
         <small>הסה״כ כולל טיסות הלוך-חזור לכל המשפחה ומלון מרכזי ל-3 לילות. השאר הוא הקצבה משוערת לתחבורה, אוכל ואטרקציות (הפירוט המדויק עוד ממתין). שערים: <bdi class="n">$1=₪3.152</bdi>, <bdi class="n">€1=₪3.52</bdi>, <bdi class="n">€1≈365 HUF</bdi></small>
@@ -528,35 +667,40 @@
     </div>
   </section>
 
-  <section id="deadlines" class="block" aria-labelledby="dl-title">
+  <section id="deadlines" data-page="todo" data-title="דדליינים ושאלות" class="block" aria-labelledby="dl-title">
     <div class="wrap">
       <h2 id="dl-title"><span aria-hidden="true">⏰</span> דדליינים לביטול חינם</h2>
       <ol class="deadlines">
+        <li><time datetime="2026-11-19"><bdi class="n">19.11</bdi></time><div><strong>Apaczai 17</strong> · בודפשט (דירה) · <bdi class="n">€715</bdi></div></li>
+        <li><time datetime="2026-11-19"><bdi class="n">19.11</bdi></time><div><strong>Rothensteiner</strong> · וינה (דירה) · <bdi class="n">€950</bdi></div></li>
         <li><time datetime="2026-11-26"><bdi class="n">26.11</bdi></time><div><strong>The Weekend Hotel</strong> · וינה · <bdi class="n">€2,198</bdi></div></li>
         <li><time datetime="2026-11-28"><bdi class="n">28.11</bdi></time><div><strong>Hotel Amadeus</strong> · בודפשט (חסכוני) · <bdi class="n">€322</bdi></div></li>
+        <li><time datetime="2026-11-28"><bdi class="n">28.11</bdi></time><div><strong>Stylish Home ברובע 9</strong> · וינה (דירה) · <bdi class="n">€1,517</bdi></div></li>
+        <li><time datetime="2026-11-28"><bdi class="n">28.11</bdi></time><div><strong>Aparthotel Rimska 14</strong> · פראג (דירה) · <bdi class="n">€1,196</bdi></div></li>
+        <li><time datetime="2026-11-28"><bdi class="n">28.11</bdi></time><div><strong>TurnKey Charles Square</strong> · פראג (דירה) · <bdi class="n">€1,209</bdi></div></li>
         <li><time datetime="2026-12-01"><bdi class="n">1.12</bdi></time><div><strong>Exe Budapest Center</strong> · בודפשט (מרכזי) · <bdi class="n">€1,739</bdi></div></li>
         <li><time datetime="2026-12-01"><bdi class="n">1.12</bdi></time><div><strong>Residence BENE</strong> · פראג · <bdi class="n">€1,438</bdi></div></li>
+        <li><time datetime="2026-12-02"><bdi class="n">2.12</bdi></time><div><strong>BP-EST Város</strong> · בודפשט (דירה) · <bdi class="n">€888</bdi></div></li>
       </ol>
-      <p class="note">שום מלון לא הוזמן עדיין. המועדים רלוונטיים רק אחרי הזמנה.</p>
+      <p class="note">שום דירה ושום מלון לא הוזמנו עדיין. המועדים רלוונטיים רק אחרי הזמנה.</p>
     </div>
   </section>
 
-  <section id="open" class="block alt" aria-labelledby="open-title">
+  <section id="open" data-page="todo" data-title="דדליינים ושאלות" class="block alt" aria-labelledby="open-title">
     <div class="wrap">
       <h2 id="open-title">שאלות פתוחות ומה חסר</h2>
       <ul class="open-list">
-        <li><span class="badge warn">ממתין לסוכן הטיסות</span> Wizz לבודפשט: שעת החזור (כנראה <bdi class="n">05:00</bdi>). גם לא חושב סה״כ עם התוספות לתינוק ול-Priority</li>
-        <li><span class="badge warn">ממתין לסוכן הטיסות</span> שעות הטיסה ל-Austrian (וינה) ול-Israir (פראג), וקישורים אליהן</li>
-        <li><span class="badge warn">לא נבדק</span> Residence BENE: המרחק מהמרכז</li>
+        <li><span class="badge warn">חסר</span> Wizz לבודפשט: מחיר ה-Priority לא מוצג, ולכן אין סה״כ סופי עם כבודה</li>
         <li><span class="badge warn">ממתין</span> הפירוט המדויק של ההקצבה לתחבורה, אוכל ואטרקציות בתוך הסה״כים</li>
-        <li><span class="badge warn">ממתין לסוכן הטיסות</span> במקור לא צוין אם המחיר של Bluebird כולל מושב לתינוק (רק אצל Austrian זה כתוב במפורש)</li>
         <li><span class="badge warn">לא אומת</span> מחירי משטח הקרח ב-Vajdahunyad לעונת 2026/27</li>
         <li><span class="badge warn">לא נבדק</span> עגלה ב-Sikló ובסיור בפרלמנט. יש מנשא, כך שזה לא חוסם</li>
         <li><span class="badge warn">לא נבדק</span> עגלה בירידה לרציף Dock 7 של שייט Legenda (יש מדרגות)</li>
         <li><span class="badge warn">לא ידוע</span> בודפשט: תאריכי 2026 של שוק Városháza Park ושל משטח הקרח בפארק העירוני</li>
+        <li>דירות: מעלית לא צוינה ב-BP-EST Város, Apaczai 17 ו-Stylish Home. כדאי לברר לפני הזמנה</li>
       </ul>
     </div>
   </section>
+  <nav class="pager" id="pager" aria-label="מעבר בין עמודים"></nav>
 </main>
 
 <footer class="foot">

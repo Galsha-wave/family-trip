@@ -141,3 +141,37 @@ table.cmp{width:100%;border-collapse:separate;border-spacing:0;background:var(--
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.topbar,.map,.seg,.legend{display:none}}
 bdi.n{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.ftimes{display:flex;flex-wrap:wrap;gap:4px 8px;margin:6px 0 4px}
+.ftimes>span{background:var(--gold-bg);border-radius:8px;padding:2px 8px;font-weight:700;font-size:.92rem}
+.cmp td .link{display:inline-block;margin-top:2px}
+.cmp tr.apt{background:var(--surface)}
+.cmp tr.apt td{vertical-align:middle}
+/* pages */
+[hidden]{display:none!important}
+html{scroll-behavior:auto}
+main:focus{outline:none}
+.menu-tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:700px){.menu-tiles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.menu-tiles{grid-template-columns:repeat(3,1fr)}}
+.menu-tiles a{display:grid;grid-template-columns:2.2em 1fr;grid-template-rows:auto auto;column-gap:10px;padding:14px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);color:inherit;text-decoration:none;min-height:44px}
+.menu-tiles a:hover,.menu-tiles a:focus-visible{border-color:var(--gold)}
+.menu-tiles .ico{grid-row:1/3;font-size:1.5rem;align-self:center}
+.menu-tiles .t{font-weight:800}
+.menu-tiles .d{font-size:.9rem;color:var(--muted)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:20px 16px 28px}
+.pager a{flex:1 1 140px;display:block;padding:14px 16px;border-radius:12px;background:var(--pine);color:#fff;text-decoration:none;font-weight:700;min-height:44px}
+.pager a.next{text-align:left}
+.pager a.prev{text-align:right}
+.pager a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.nav a.active{font-weight:800}
+:root[data-theme="dark"] .pager a{color:#06261a}
+@media (max-width:719px){
+  .topbar{position:static}
+  .topbar-in{flex-wrap:wrap;padding-top:6px;padding-bottom:8px;row-gap:6px}
+  .brand{flex:1}
+  nav{order:3;flex:1 1 100%;overflow:visible}
+  .nav{flex-wrap:wrap;gap:6px}
+  .nav a{padding:7px 12px;background:var(--surface);border:1px solid var(--line);font-size:.9rem}
+  .nav a.active{background:var(--pine);color:#fff;border-color:var(--pine)}
+  :root[data-theme="dark"] .nav a.active{color:#06261a}
+}
