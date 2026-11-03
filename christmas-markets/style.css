@@ -175,3 +175,9 @@ main:focus{outline:none}
   .nav a.active{background:var(--pine);color:#fff;border-color:var(--pine)}
   :root[data-theme="dark"] .nav a.active{color:#06261a}
 }
+.badge.calc{background:#e3eefc;color:#1b4f8f;border-color:transparent}
+:root[data-theme="dark"] .badge.calc{background:#1b2c44;color:#a9c8f2}
+.total.now{border:2px solid var(--pine);margin-top:0;margin-bottom:18px}
+.total.now small{color:var(--ink);font-weight:500}
+.total.now small strong{color:var(--ink);font-size:1rem}
+.cmp-now{margin-bottom:6px}
